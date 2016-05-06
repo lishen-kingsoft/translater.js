@@ -203,7 +203,7 @@ var getTextNodes = window.NodeFilter?function(e){
     var r=[],o,s;
     s=document.createTreeWalker(e,NodeFilter.SHOW_TEXT,null,null);
     while(o=s.nextNode()){
-      if(o.parentElement.tagName !== 'SCRIPT' 
+      if(o && o.parentElement && o.parentElement.tagName !== 'SCRIPT' 
         && o.parentElement.tagName !== 'STYLE'
         && o.parentElement.tagName !== 'CODE'
         && trim(o.nodeValue) !== ''
